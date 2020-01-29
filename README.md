@@ -1,6 +1,6 @@
 # Notebook 2020
 
-This is an experimental project on programming style mathematical notebook. Main points of experiments are 
+This is an experimental project on programming style mathematical notebook writing. Main points of experiments are 
 
 1. Files arrangement system.
 2. Class, functions, database (constants) hierarchy and connections.
