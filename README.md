@@ -12,19 +12,19 @@ This is an experimental project on programming style mathematical notebook. Main
         self.base = X
 ```
 In mathematics, this might means we want to consider the Hilbert schemes of points on X. This programming style thinking force us to define 
-the mathematical object more clearly. So we can gather relavant functions (theorems, propositions, lemmas) and constants (import, set ups) in one section (class).
+the mathematical object more clearly. So we can gather relevant functions (theorems, propositions, lemmas) and constants (import, set ups) in one section (class).
 
 ```python
 >>> def count_points(self, X):
       pass
 ```
-We might have a concrete method to count points on a Hilbert scheme, then the explantion of this method is like defining a function in python or C++. Once again, this forces us to focus on one realizable problem, clearly state the input and output.
+We might have a concrete method to count points on a Hilbert scheme, then the explanation of this method is like defining a function in python or C++. Once again, this forces us to focus on one realizable problem, clearly state the input and output.
 
 ```python
 >>> def test():
       pass
 ```
-For a code snippet to work properly, we need to test the functions in concrete cases, it's like showing examples, or doing computations explicity.
+For a code snippet to work properly, we need to test the functions in concrete cases, it's like showing examples, or doing computations explicitly.
 
 ```python 
 """Construct a Hilb class to ...
