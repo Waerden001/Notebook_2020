@@ -1,0 +1,27 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{Motivic integrals}
+
+\subsection{Counting points on Hilbert schemes of points on a point}
+Consider the category $\mathcal{C}$ of schemes over $\mathbf{F}_{p}$, let $X=\Spec(\mathbf{F}_{p})$, $\Hilb^{n}(X)$ is the following functor
+$$
+   \Hilb^{n}(X): \mathcal{C} \rightarrow \mathrm{Set}$$
+$$   X \mapsto \{Z\rightarrow X|\text{ flat of relative } \dim 0 \text{ and } \deg(Z_{x}) = n \forall x \in X\},
+$$
+where $\deg(Z_{x}):=\displaystyle \sum_{y \text{ over }x}[\O_{Z,y}/\mathfrak{m}_{Z,y}:\O_{X, x}/\mathfrak{m}_{X,x}]$. 
+\begin{proposition}
+$\displaystyle \#\Hilb^{n}(X)(\mathbf{F}_{p})= \sum_{k_{1}+\dots k_{m}=n}\#X(\mathbf{F}_{p^{k_{i}}})$.
+\end{proposition}
+\begin{corollary}
+$\displaystyle \sum_{n\geq 1}\#\Hilb^{n}(X)(\mathbf{F}_{p})q^{n}=\displaystyle \prod_{k=1}^{+\infty}\frac{1}{(1-q^{k})}$.
+\end{corollary}
+
+
+
+
+
+
+
+\section{Euler characteristic and motivic integral}
+
+\end{document}
