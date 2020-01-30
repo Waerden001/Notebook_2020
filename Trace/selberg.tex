@@ -1,0 +1,91 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Selberg trace formula for $SL_{2}$, $1/30/2020$}
+\subsection{Upper half plane}
+In the 1940's, Masse considered the spectrum decomposition of the Laplacian $\Delta = y^{2}(\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}})$ on $L^{2}(\Gamma\backslash H)$.
+\begin{proposition}
+$\Delta$ is invariant under the $SL_{2}(\R)$ fractional linear transformation. 
+\end{proposition}
+\begin{proof}
+Let $\frac{d}{dz}=\frac{1}{2}(\frac{\partial }{\partial x}+\frac{\partial}{\partial y})$ and $\frac{d}{d\overline{z}}=\frac{1}{2}(\frac{\partial }{\partial x}-\frac{\partial}{\partial y})$. Then $\Delta = -4 \mathrm{Im}(z)^{2}\frac{d}{dz}\frac{d}{d\overline{z}}$. $\mathrm{Im}(\alpha z)=\frac{y}{|cz+d|^{2}}$, it follows from a direct computation.
+\end{proof}
+\begin{proposition}
+$\Delta$ is a self-adjoint operator on $L^{2}(\Gamma\backslash H)$ under the Peterson inner product. Thus all eigenvalues are real numbers.
+\end{proposition}
+\begin{definition}[Masse Form]
+$\phi:L^{2}(\Gamma\backslash H)\rightarrow \C$ is called a Masse form if 
+\begin{itemize}
+    \item $\phi$ is smooth.
+    \item $\phi$ is an eigenvector of $\Delta$.
+    \item $\int_{0}^{1}\phi(z+t)dt=0$, that is, cuspidal.
+\end{itemize}
+\end{definition}
+\begin{theorem}
+If $\phi\in L^{2}(\Gamma\backslash H)$ is smooth, then 
+$$\phi(z)=\sum_{\lambda}\langle \phi, \phi_{\lambda}(z)\rangle dz.$$
+\end{theorem}
+\begin{remark}
+Masse forms decay exponentially. 
+\end{remark}
+\begin{definition}[Bessel function]
+$K_{v}(y)=\frac{1}{2}\int_{0}^{\infty}e^{-y(u+\frac{1}{u})}u^{v}\frac{du}{u}$. Note that $K_{v}(y)\sim \sqrt{\frac{\pi}{2y}}e^{-y}$.
+\end{definition}
+\begin{theorem}
+Let $\phi$ be a Masse form with eigenvalue $\lambda = \frac{1}{4}+r^{2}$. Then we have the Fourier expansion
+$$\phi(z)=\sum_{n\neq 0}A_{\phi}(n)\sqrt{y}K_{ir}(2\pi |n|y)e^{2\pi i nx}$$.
+\end{theorem}
+\begin{proof}
+Since $\phi(z+1)=\phi(z)$, thus $\phi(x+iy)=\displaystyle \sum_{n\neq 0}B_{n}(y)e^{2\pi i nx}$. Since $\Delta(\phi)=(\frac{1}{4}+r^2)\phi$, this implies every term $B_{n}(y)e^{2\pi i nx}$ has to be an eigenfunction of the same eigenvalue. A direct computation shows that we get the Whittaker's equations  
+$$-y^{2}B_{n}''(y)+(4\pi^{2}n^{2}y^{2}-(\frac{1}{4}+r^{2}))B_{n}(y)=0$$
+\end{proof}
+\begin{remark}
+Jacquet's thesis considers the question adelically, similar differential equations can be found in all places. 
+\end{remark}
+
+
+\begin{corollary}
+$\phi(x+iy)<<_{\lambda}e^{-y^{2}}$.
+\end{corollary}
+\begin{lemma}
+$A_{\phi}(n)<<n^{\frac{1}{2}}$.
+\end{lemma}
+
+\subsection{Integral operators}
+Recall that $f:\R_{+}\rightarrow \C$ with nice decay properties. The associated kernel is $K_{f}(z, z') = \displaystyle\sum_{\gamma \in SL(2, \Z)}f(\frac{|z-\gamma z'|^{2}}{y\mathrm{Im}\gamma z'})$ and the associated operator $$(K_{f}\phi)(z)=\displaystyle \int_{\Gamma\backslash H}K_{f}(z, z')\phi(z')\frac{dx'dy'}{y'^{2}}.$$
+\begin{proposition}
+$K_{f}\Delta = \Delta K_{f}$.
+\end{proposition}
+\begin{proof}
+Check first that $\Delta f(\frac{|z-z'|^{2}}{yy'})=\Delta'f(\frac{|z-z'|^{2}}{yy'})$. Now it's just a direct computation
+$$\begin{align*}
+    K_{f}\Delta\phi(z) &= \int_{\Gamma\backslash H}K_{f}\Delta'\phi(z')\frac{dx'dy'}{y'^{2}}\\
+    &=\int_{\Gamma\backslash H}\Delta' K_{f}\phi(z')\frac{dx'dy'}{y'^{2}} \text{ }(\text{integral by part})\\
+    &= \Delta K_{f}\phi.
+\end{align*}$$
+\end{proof}
+\begin{remark}
+Commuting semisimple operators have mutual eigenvectors. Or one of the operators has distinct $1$-dimensional eigenspaces, then they're also eigenspaces of the other operator, possibly of different eigenvalues.
+\end{remark}
+\begin{definition}[Selberg transform]
+For Masse form $\phi_{\lambda}$, we have $K_{f}\phi_{\lambda}= h_{f}(\lambda)\phi(z)$. $h_{f}(\lambda)$ is called the Selberg transform.
+\end{definition}
+To find a formula for the Selbert transform, we can change to the Polar coordinate by $w(z')=\frac{z'-z}{z'-\overline{z}}$ to the unit disk $D$, and let $\phi^{*}(w)=\phi(z')$, $w(z)=0$. $w=re^{i\theta}$, brutal force shows that $\frac{|z-z'|^{2}}{yy'}=\frac{4|w|^{2}}{1-|w|^{2}}$. The invariant measure $\frac{dx'dy'}{y'^{2}}$ becomes $\frac{rdrd\theta}{(1-r^{2})^{2}}$. Then $K_{f}\phi_{\lambda}=h_{f}(\lambda)\phi_{\lambda}$ becomes
+$$2\pi\int_{r=0}^{1}f(\frac{4r^{2}}{1-r^{2}})\frac{1}{2\pi}\int_{0}^{2\pi}\phi^{*}(re^{2\pi i \theta}d\theta)\frac{rdr}{(1-r^{2})^{2}}=h_{f}(\lambda)\int_{0}^{2\pi}\frac{\phi^{*}(0)}{2\pi}d\theta.$$
+Let $\phi^{\#}(w)=\frac{1}{2\pi}\int_{0}^{2\pi}\phi^{*}(we^{i\theta})d\theta$. We get 
+$$2\pi \int_{0}^{1}f(\frac{4r^{2}}{1-r^{2}})\phi^{\#}(r)\frac{rdr}{(1-r^{2})^{2}}=h_{f}(\lambda)\phi^{\#}(0).$$
+In the Polar coordinate, the non-Euclidean Laplacian is given by 
+$$\frac{(1-r^{2})^{2}}{4}(\frac{d^{2}}{dr^{2}}+\frac{1}{r}\frac{d}{dr} +\frac{1}{r^{2}}\frac{d^{2}}{d\theta^{2}}).$$
+Now $\phi^{\#}$ is radically symmetric, meaning that $\frac{\partial \phi^{\#}}{\partial\theta}=0$. Together with the fact the $\phi$ is an eigenfunction of $\Delta$. We see that $\phi^{\#}$ is an eigenfunction of 
+$$\frac{(1-r^{2})^{2}}{4}(\frac{d^{2}}{dr^{2}}+\frac{1}{r}\frac{d}{dr}).$$
+\begin{lemma}
+There is a unique solution to the equation 
+$$\frac{(1-r^{2})^{2}}{4}(\frac{d^{2}}{dr^{2}}+\frac{1}{r}\frac{d}{dr} +\frac{1}{r^{2}}\frac{d^{2}}{d\theta^{2}})F=\lambda F.$$
+\end{lemma}
+\begin{proof}
+By ODE theory, we know the equation generally have two kinds of solutions
+\begin{itemize}
+    \item[1.] $F(r)=r^{c}\sum_{i=0}^{\infty}a_{i}r^{i}$ \item[2.] $F(r)= \log(r)r^{c}\sum_{i=0}^{\infty}b_{i}r^{i}$.
+\end{itemize}
+The problem for the second solution is that, it's not regular. Plug the first ansatz in the equation, we can solve the equation recursively, we tells us, we do have a unique solution to the Laplacian operator, namely, the eigenspaces are all of $1$-dimensional.
+\end{proof}
+\end{document}
